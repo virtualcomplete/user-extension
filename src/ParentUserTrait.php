@@ -1,26 +1,31 @@
 <?php
 namespace VirtualComplete\UserExtension;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class ParentUserTrait
  * @package VirtualComplete\UserExtension
- * 
+ *
  * @property int $parent_id
  */
 class ParentUserTrait extends \Eloquent
 {
     /**
-     * @return $this|BelongsTo|null
+     * Retrieve the parent of this child user if one exists
+     *
+     * @return $this|\Illuminate\Database\Eloquent\Relations\BelongsTo|null
      */
-    public function parent() {
+    public function parent()
+    {
         return $this->belongsTo(static::class, 'parent_id');
     }
 
     /**
+     * Retrieve the children of this user
+     *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany|$this[]
      */
-    public function children() {
+    public function children()
+    {
         return $this->hasMany(static::class, 'parent_id');
     }
 }

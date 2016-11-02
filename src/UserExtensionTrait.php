@@ -20,7 +20,8 @@ namespace VirtualComplete\UserExtension;
  */
 trait UserExtensionTrait
 {
-    public function setPhoneAttribute($value) {
+    public function setPhoneAttribute($value)
+    {
         $this->attributes['phone'] = preg_replace('/[^\dxX+]/', '', $value);
     }
 }
