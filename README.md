@@ -24,6 +24,7 @@ Adds the fields:
 * phone (\+x\d only, ex: +1 (555) 555-5555 x2 becomes +15555555555x2)
 * language (2 char)
 * time_zone (meant to be linux format: America/New_York)
+* deleted_at (soft deletes)
 
 **Installation Steps:**
 
