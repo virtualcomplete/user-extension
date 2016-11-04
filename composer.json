@@ -2,7 +2,7 @@
   "name": "virtualcomplete/user-extension",
   "description": "Package to extend and standardize additional user attributes for Laravel packages",
   "keywords": ["laravel", "packages", "subuser", "user extension"],
-  "homepage": "https://github.com/devonblzx/wp-eloquent",
+  "homepage": "https://github.com/virtualcomplete/user-extension",
   "require": {
     "laravel/laravel": "^5.2"
   },
