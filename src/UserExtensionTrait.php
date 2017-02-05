@@ -22,16 +22,20 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 trait UserExtensionTrait
 {
     /**
-     * Shortcut to defining the default phone number
+     * Shortcut to setting the default phone number
      *
      * @param string $value
      * @return void
      */
     public function setPhoneAttribute($value)
     {
-        $default = $this->phone;
-        if (!$default) $default = new UserPhone();
-        $default->number = preg_replace('/[^\dx+]/i', '', $value);
+        $phone = $this->phone;
+        if (!$phone) $phone = new UserPhone();
+
+        $phone->default = true;
+        $phone->number = $value;
+
+        $this->phone()->save($phone);
     }
 
     /**
