@@ -13,7 +13,7 @@ class UserParentId extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('parent_id')->unsigned();
+            $table->integer('parent_id')->unsigned()->nullable();
             $table->foreign('parent_id')->references('id')->on('users')->onDelete('restrict')->onUpdate('cascade');
         });
     }
