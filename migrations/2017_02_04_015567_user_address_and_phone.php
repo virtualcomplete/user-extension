@@ -22,10 +22,9 @@ class UserAddressAndPhone extends Migration
             $table->string('state')->nullable();
             $table->string('country')->nullable();
             $table->string('zip')->nullable();
-            $table->boolean('default');
+            $table->boolean('default')->default(false);
             $table->timestamps();
 
-            $table->unique(['user_id', 'default']);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
 
@@ -35,10 +34,9 @@ class UserAddressAndPhone extends Migration
             $table->string('type')->nullable();
             $table->string('number');
             $table->string('extension')->nullable();
-            $table->boolean('default');
+            $table->boolean('default')->default(false);
             $table->timestamps();
 
-            $table->unique(['user_id', 'default']);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
