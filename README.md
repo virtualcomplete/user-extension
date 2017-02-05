@@ -13,8 +13,6 @@ The standard users table only contains a select few fields.  This is by design, 
 1. Business projects that need additional user information and the ability to store multiple addresses or phone numbers for a single user.
 2. Cross compatibility with Laravel packages.  The idea is to standardize the additional user attributes so Laravel packages can more easily work together using the same method of accessing these attributes.
 
-You can choose to use just the UserExtensionTrait and migration but you can also use the ParentUserTrait and migration to enable sub-user support.
-
 ## UserExtension
 
 Functionality:  Adds additional fields to the users table and properties to the User model.
@@ -23,7 +21,6 @@ Functionality:  Adds additional fields to the users table and properties to the 
 
 * company_name
 * country (2 char)
-* phone (\+x\d only, ex: +1 (555) 555-5555 x2 becomes +15555555555x2)
 * language (2 char)
 * time_zone (meant to be linux format: America/New_York)
 * deleted_at (soft deletes)
@@ -51,18 +48,4 @@ Functionality:  Adds additional fields to the users table and properties to the 
 1.  Run user_extension migration
 2.  Add `implements UserExtensionInterface` to your User Model
 3.  Add `use UserExtensionTrait` to your User Model
-
-## ParentUser
-
-Functionality:  Allows parent and child relationships with users creating sub-user functionality.
-
-Adds the fields:
-
-* parent_id
-
-**Installation Steps:**
-
-1.  Run user_parent_id migration
-2.  Add `implements ParentUserInterface` to your User Model
-3.  Add `use ParentUserTrait` to your User Model
 
