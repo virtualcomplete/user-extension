@@ -1,0 +1,27 @@
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7.0
+  - 7.1
+  - hhvm
+
+services:
+  - mysql
+
+before_script:
+  - composer self-update
+  - composer create-project --prefer-source laravel/laravel
+  - cd ./laravel
+  - composer config repositories.virtualcomplete vcs https://github.com/virtualcomplete/user-extension.git
+  - composer require virtualcomplete/user-extension dev-master
+  - composer update
+  - cp ./vendor/virtualcomplete/user-extension/tests/config/.env ./
+  - cp ./vendor/virtualcomplete/user-extension/migrations/* ./database/migrations/
+  - mysql -e 'CREATE DATABASE laravel;'
+  - php artisan migrate
+  - cd ./vendor/virtualcomplete/user-extension
+
+script: phpunit
