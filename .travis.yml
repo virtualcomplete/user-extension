@@ -16,6 +16,7 @@ before_script:
   - composer config repositories.virtualcomplete vcs https://github.com/virtualcomplete/user-extension.git
   - composer require virtualcomplete/user-extension dev-master
   - cp ./vendor/virtualcomplete/user-extension/tests/config/.env ./
+  - php artisan key:generate
   - rm -f ./database/migrations/*.php
   - cp ./vendor/virtualcomplete/user-extension/tests/migrations/* ./database/migrations/
   - cp ./vendor/virtualcomplete/user-extension/migrations/* ./database/migrations/
