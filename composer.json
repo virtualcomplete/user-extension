@@ -10,7 +10,7 @@
   ],
   "homepage": "https://github.com/virtualcomplete/user-extension",
   "require": {
-    "laravel/laravel": "5.*"
+    "laravel/framework": "5.*"
   },
   "license": "MIT",
   "authors": [
