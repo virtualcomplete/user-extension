@@ -16,7 +16,7 @@ class ParentUserTrait extends \Eloquent
      */
     public function parent()
     {
-        return $this->belongsTo(static::class, 'parent_id');
+        return $this->belongsTo('App\User', 'parent_id');
     }
 
     /**
@@ -26,6 +26,6 @@ class ParentUserTrait extends \Eloquent
      */
     public function children()
     {
-        return $this->hasMany(static::class, 'parent_id');
+        return $this->hasMany('App\User', 'parent_id');
     }
 }
