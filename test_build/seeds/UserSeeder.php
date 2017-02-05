@@ -1,13 +1,12 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use VirtualComplete\UserExtension\Test\TestUserModel;
 
 class UserSeeder extends Seeder
 {
     public function run()
     {
-        include_once __DIR__ . "/../../vendor/virtualcomplete/user-extension/tests/TestUserModel.php";
-
         $user = TestUserModel::create([
             'name' => 'Test',
             'email' => 'test@test.com',

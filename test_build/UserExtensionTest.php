@@ -1,5 +1,7 @@
 <?php
 
+use VirtualComplete\UserExtension\Test\TestUserModel;
+
 /**
  * Class UserExtensionTest
  *
@@ -12,7 +14,6 @@ class UserExtensionTest extends TestCase
     public function __construct($name = null, array $data = [], $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
-        include_once __DIR__ . '/TestUserModel.php';
         $this->user = TestUserModel::first();
     }
 

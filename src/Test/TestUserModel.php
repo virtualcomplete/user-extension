@@ -1,4 +1,5 @@
 <?php
+namespace VirtualComplete\UserExtension\Test;
 
 use Illuminate\Database\Eloquent\Model;
 use VirtualComplete\UserExtension\UserExtensionTrait;

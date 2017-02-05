@@ -15,15 +15,17 @@ before_script:
   - cd ./laravel
   - composer config repositories.virtualcomplete vcs https://github.com/virtualcomplete/user-extension.git
   - composer require virtualcomplete/user-extension dev-master
-  - cp ./vendor/virtualcomplete/user-extension/tests/config/.env ./
+  - cp ./vendor/virtualcomplete/user-extension/test_build/config/.env ./
   - php artisan key:generate
   - rm -f ./database/migrations/*.php
-  - cp ./vendor/virtualcomplete/user-extension/tests/migrations/* ./database/migrations/
+  - cp ./vendor/virtualcomplete/user-extension/test_build/migrations/* ./database/migrations/
   - cp ./vendor/virtualcomplete/user-extension/migrations/* ./database/migrations/
   - mysql -e 'CREATE DATABASE laravel;'
   - php artisan migrate
-  - cp ./vendor/virtualcomplete/user-extension/tests/seeds/* ./database/seeds/
+  - cp ./vendor/virtualcomplete/user-extension/test_build/seeds/* ./database/seeds/
   - composer dump-autoload
   - php artisan db:seed --class="UserSeeder"
+  - cp ./vendor/virtualcomplete/user-extension/test_build/*Test.php ./tests/
+
 
 script: phpunit
