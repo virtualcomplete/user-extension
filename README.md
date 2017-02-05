@@ -1,3 +1,7 @@
+<p align="center">
+<a href="https://travis-ci.org/virtualcomplete/user-extension"><img src="https://travis-ci.org/virtualcomplete/user-extension.svg?branch=master" alt="Build Status"></a>
+</p>
+
 # Laravel User Extension
 
 Package to extend and standardize additional user attributes in Laravel
