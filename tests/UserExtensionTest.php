@@ -5,7 +5,7 @@
  *
  * Depends on seeds/UserSeeder to be run
  */
-class UserExtensionTest extends PHPUnit_Framework_TestCase
+class UserExtensionTest extends TestCase
 {
     protected $user;
 
