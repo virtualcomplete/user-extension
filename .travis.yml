@@ -25,7 +25,7 @@ before_script:
   - cp ./vendor/virtualcomplete/user-extension/test_build/seeds/* ./database/seeds/
   - composer dump-autoload
   - php artisan db:seed --class="UserSeeder"
-  - cp ./vendor/virtualcomplete/user-extension/test_build/*Test.php ./tests/
+  - cp ./vendor/virtualcomplete/user-extension/tests/*Test.php ./tests/
 
 
 script: phpunit
