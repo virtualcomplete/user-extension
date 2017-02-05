@@ -9,7 +9,7 @@ class UserExtensionTest extends PHPUnit_Framework_TestCase
 {
     protected $user;
 
-    public function __construct($name, array $data, $dataName)
+    public function __construct($name = null, array $data = [], $dataName = '')
     {
         parent::__construct($name, $data, $dataName);
         include_once __DIR__ . '/TestUserModel.php';
