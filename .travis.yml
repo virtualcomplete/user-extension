@@ -21,7 +21,7 @@ before_script:
   - cp ./vendor/virtualcomplete/user-extension/migrations/* ./database/migrations/
   - mysql -e 'CREATE DATABASE laravel;'
   - php artisan migrate
-  - cp ./vendor/virtualcomplete/user-extension/seeds/* ./database/seeds/
+  - cp ./vendor/virtualcomplete/user-extension/tests/seeds/* ./database/seeds/
   - php artisan db:seed --class="UserSeeder"
   - cd ./vendor/virtualcomplete/user-extension
 
