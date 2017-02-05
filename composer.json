@@ -1,10 +1,16 @@
 {
   "name": "virtualcomplete/user-extension",
-  "description": "Package to extend and standardize additional user attributes for Laravel packages",
-  "keywords": ["laravel", "packages", "subuser", "user extension"],
+  "description": "Package to extend and standardize additional user attributes for cross-compatibility of Laravel packages",
+  "keywords": [
+    "laravel",
+    "packages",
+    "subuser",
+    "user extension",
+    "addresses"
+  ],
   "homepage": "https://github.com/virtualcomplete/user-extension",
   "require": {
-    "laravel/laravel": "^5.2"
+    "laravel/laravel": "5.*"
   },
   "license": "MIT",
   "authors": [
